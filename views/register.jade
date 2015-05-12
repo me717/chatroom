@@ -1,18 +1,17 @@
 extends layout
 
 block styles
-    link(rel='stylesheet', href='/stylesheets/login.css')
+    link(rel='stylesheet', href='/stylesheets/register.css')
 
 block scripts
-    script(src="/javascripts/login.js")
+    script(src="/javascripts/register.js")
 
 block content
-    div.container.login
-        //- form(onsubmit="login()")
-        h2 Login
+    div.container.register
+        h2 Register
         //- label(class="sr-only", for="usernameInput") Username
         input.form-control(type="text", id="usernameInput", placeholder="Username")
         //- label(class="sr-only", for="passwordInput") Password
         input.form-control(type="password", id="passwordInput", placeholder="Password")
-        button.btn.btn-lg.btn-primary.btn-block(id="loginButton",  onclick="login()") Sign In
-        a(href="/register") Register new user
+        input.form-control(type="password", id="confirmInput", placeholder="ReenterPassword")
+        button.btn.btn-lg.btn-primary.btn-block(id="registerButton", onclick="register()") Register
