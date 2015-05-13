@@ -11,9 +11,16 @@ function login() {
         data: data,
         success: function(response) {
             console.log(response);
+            if(response) {
+
+            } else {
+                $("#message").html("Error with login information");
+                $("#passwordInput").val("");
+            }
         },
         error: function(error) {
-            console.log(error);
+            $("#message").html("Server error.  Please try again later");
+            $("#passwordInput").val("");
         } 
     });
 }

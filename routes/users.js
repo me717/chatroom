@@ -26,25 +26,32 @@ router.post('/login', function(req, res, next) {
             res.send(data);
         }
     });
-    // console.log("Logging in");
-    // res.status(200);
-    // res.send();
 });
 
 router.post('/register', function(req, res, next) {
     var username = req.body.username;
     var password = req.body.password;
     var data = {
-        username: username,
+        username: username, 
         password: password
     };
-    User.create(data, function(err, user) {
+    User.findOne({username:username}, function(err, data) {
         if(err) {
             res.status(500);
-            res.send(err);
-        } else {
+            res.send(err);           
+        } else if (data) {
             res.status(200);
-            res.send(user);
+            res.send();
+        } else{
+            User.create(data, function(err, user) {
+                if(err) {
+                    res.status(500);
+                    res.send(err);
+                } else {
+                    res.status(200);
+                res.send(user);
+            }
+            });
         }
     });
 });
