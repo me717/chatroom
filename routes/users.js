@@ -22,6 +22,9 @@ router.post('/login', function(req, res, next) {
             res.status(500);
             res.send(err);
         } else {
+            if (data) {
+                req.session.username = username;
+            }
             res.status(200);
             res.send(data);
         }
@@ -48,9 +51,10 @@ router.post('/register', function(req, res, next) {
                     res.status(500);
                     res.send(err);
                 } else {
+                    req.session.username = username;
                     res.status(200);
-                res.send(user);
-            }
+                    res.send(user);
+                }
             });
         }
     });

@@ -11,7 +11,11 @@ router.get('/register', function(req, res, next) {
 });
 
 router.get('/chatroom', function(req, res, next) {
-    res.render('chatroom', {title: 'Chatroom'});
+    if(req.session.username) {
+       res.render('chatroom', {title: 'Chatroom'});    
+    } else {
+      res.render('index', { title: 'Login' });
+    }
 });
 
 module.exports = router;
