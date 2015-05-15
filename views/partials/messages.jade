@@ -1,0 +1,11 @@
+- var odd = false;
+each message in messages
+    if odd
+        div.message.row
+            div.messageUsername.col-md-2= message.username
+            div.messageText.col-md-10= message.text
+    else
+        div.message.even.row
+            div.messageUsername.col-md-2= message.username
+            div.messageText.col-md-10= message.text
+    - odd = !odd

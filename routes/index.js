@@ -10,4 +10,8 @@ router.get('/register', function(req, res, next) {
     res.render('register', {title: 'Register'});
 });
 
+router.get('/chatroom', function(req, res, next) {
+    res.render('chatroom', {title: 'Chatroom'});
+});
+
 module.exports = router;

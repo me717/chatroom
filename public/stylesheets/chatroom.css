@@ -1,0 +1,33 @@
+.chatroom {
+    margin-left: 25%;
+    max-width: 50%;
+    position: relative;
+}
+
+#messagesDiv {
+    max-height: 60vh;
+    overflow-y: scroll;
+}
+
+#messagesDiv .message {
+    width: 100%;
+    margin: 0;
+    overflow: auto;
+}
+
+#messagesDiv .message .messageUsername {
+    clear: left;
+    float: left;
+}
+
+#messagesDiv .even{
+    background: #99FFCC;
+}
+#messagesDiv .message .messageText {
+    float: left;
+}
+
+.controls {
+    clear: both;
+}
+
