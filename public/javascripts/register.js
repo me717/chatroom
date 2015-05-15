@@ -15,6 +15,8 @@ function register() {
                     $("#message").html("Username is already in use");
                     $("#passwordInput").val("");
                     $("#confirmInput").val("")
+                } else {
+                    window.location.href = "chatroom";
                 }
             },
             error: function(error) {

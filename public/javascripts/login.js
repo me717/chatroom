@@ -10,9 +10,8 @@ function login() {
         method: "POST",
         data: data,
         success: function(response) {
-            console.log(response);
             if(response) {
-
+                window.location.href = "chatroom";
             } else {
                 $("#message").html("Error with login information");
                 $("#passwordInput").val("");
