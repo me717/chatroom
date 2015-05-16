@@ -10,10 +10,14 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var messages = require('./routes/messages');
 
+var uristring =
+  process.env.MONGOLAB_URI ||
+  process.env.MONGOHQ_URL ||
+  'mongodb://localhost/chatroom';
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/chatroom', function(err) {
+mongoose.connect(uristring, function(err) {
   if(err) {
-    console.log('connection error', err);
+    console.log('connection error: ' + uristring, err);
   } else {
     console.log('connection successful');
   }
